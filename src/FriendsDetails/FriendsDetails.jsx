@@ -120,7 +120,7 @@ const FriendsDetails = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
                         <div className="bg-white rounded-xl shadow p-5 text-center">
-                            <h2 className="text-2xl font-bold">
+                            <h2 className="text-2xl font-bold" style={{color: '#244D3F'}}>
                                 {expectedFriend.days_since_contact}
                             </h2>
                             <p className="text-sm text-gray-500">
@@ -129,7 +129,7 @@ const FriendsDetails = () => {
                         </div>
 
                         <div className="bg-white rounded-xl shadow p-5 text-center">
-                            <h2 className="text-2xl font-bold">
+                            <h2 className="text-2xl font-bold" style={{color: '#244D3F'}}>
                                 {expectedFriend.goal}
                             </h2>
                             <p className="text-sm text-gray-500">
@@ -138,7 +138,7 @@ const FriendsDetails = () => {
                         </div>
 
                         <div className="bg-white rounded-xl shadow p-5 text-center">
-                            <h2 className="text-xl font-bold">
+                            <h2 className="text-xl font-bold" style={{color: '#244D3F'}}>
                                 {expectedFriend.next_due_date}
                             </h2>
                             <p className="text-sm text-gray-500">
