@@ -21,7 +21,7 @@ const States = () => {
             <h2 className='font-bold text-5xl p-6 my-6'>Friendship Analytics</h2>
 
             <div className='p-12 my-5 shadow-2xl bg-gray-100' style={{ width: '100%', height: 400 }}>
-                <p className='font-semibold text-2xl'>By Interaction Type</p>
+                <p className='font-semibold text-2xl text-black'>By Interaction Type</p>
                 <ResponsiveContainer>
                     <PieChart>
                         <Pie
