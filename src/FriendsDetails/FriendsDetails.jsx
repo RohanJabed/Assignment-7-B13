@@ -62,17 +62,17 @@ const FriendsDetails = () => {
                         className="w-20 h-20 rounded-full mx-auto"
                     />
 
-                    <h2 className="text-lg font-semibold mt-3">
+                    <h2 className="text-lg font-semibold mt-3 text-black">
                         {expectedFriend.name}
                     </h2>
 
                     <div className="flex justify-center gap-2 mt-2">
 
                         <span className={`text-xs px-3 py-1 rounded-full ${expectedFriend.status === "Overdue"
-                            ? "bg-red-100 text-red-600"
+                            ? "bg-red-500 text-white"
                             : expectedFriend.status === "Almost due"
                                 ? "bg-yellow-100 text-yellow-600"
-                                : "bg-green-100 text-green-600"
+                                : "bg-green-500 text-white"
                             }`}>
                             {expectedFriend.status}
                         </span>
@@ -98,11 +98,11 @@ const FriendsDetails = () => {
 
                     <div className="mt-6 space-y-2">
 
-                        <button className="w-full border rounded-lg py-2 hover:bg-gray-100">
+                        <button className="w-full border rounded-lg py-2 hover:bg-gray-100 text-black">
                             Snooze 2 Weeks
                         </button>
 
-                        <button className="w-full border rounded-lg py-2 hover:bg-gray-100">
+                        <button className="w-full border rounded-lg py-2 hover:bg-gray-100 text-black">
                             Archive
                         </button>
 
