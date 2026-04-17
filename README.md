@@ -1,16 +1,33 @@
-# React + Vite
+📌 Friend Tracker App
+🚀 Project Name
+Friend Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📖 Description
+Friend Tracker is a simple and interactive React application that helps users keep track of their friends, monitor communication frequency, and maintain relationships. Users can view friend details, track interactions like calls/texts/videos, and see a timeline of activities.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Technologies Used
+React.js
+React Router
+Context API
+Tailwind CSS
+DaisyUI
+Lucide React Icons
+✨ Key Features
+🔹 1. Friend Management
+View a list of friends with details like name, status, tags, and contact history.
+🔹 2. Dynamic Timeline System
+Track interactions (Call, Text, Video) with timestamps.
+Automatically logs activities in a timeline.
+🔹 3. Status-Based UI
+Visual indicators for friend status (Overdue, Almost Due, On Track).
+Color-coded badges for better user experience.
+📸 Preview
+Clean UI with cards and timeline layout
+Interactive buttons for quick actions
+Responsive design for all devices
+⚡ Future Improvements
+Add filter system for timeline
+Save data using localStorage or database
+Add edit/delete features for timeline
+👨‍💻 Author
+Mahabub Islam

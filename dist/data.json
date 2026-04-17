@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Ahsan Rahman",
+    "picture": "https://i.ibb.co.com/hPW4H1n/ludovic-migneault-EZ4-TYg-XPNWk-unsplash.jpg",
+    "email": "ahsan.rahman@gmail.com",
+    "days_since_contact": 18,
+    "status": "Overdue",
+    "tags": ["University", "Close friend"],
+    "bio": "Met during CSE at university. We used to work on coding projects together and still share tech ideas.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "Nusrat Jahan",
+    "picture": "https://i.ibb.co.com/RL8rZRS/jake-nackos-IF9-TK5-Uy-KI-unsplash.jpg",
+    "email": "nusrat.jahan@yahoo.com",
+    "days_since_contact": 10,
+    "status": "Almost due",
+    "tags": ["School", "Best friend"],
+    "bio": "School friend since class 6. We talk about life, career, and sometimes plan meetups.",
+    "goal": 12,
+    "next_due_date": "2025-07-18"
+  },
+  {
+    "id": 3,
+    "name": "Tanvir Hasan",
+    "picture": "https://i.ibb.co.com/20wyKF5Y/ian-dooley-d1-UPki-Fd04-A-unsplash.jpg",
+    "email": "tanvir.hasan@outlook.com",
+    "days_since_contact": 5,
+    "status": "On-track",
+    "tags": ["Office", "Gym buddy"],
+    "bio": "Colleague from my first job. We go to the gym together and motivate each other.",
+    "goal": 10,
+    "next_due_date": "2025-07-25"
+  },
+  {
+    "id": 4,
+    "name": "Farhana Akter",
+    "picture": "https://i.ibb.co.com/vvwNG6X6/joshua-rondeau-Zn-HRNtw-Xg6-Q-unsplash.jpg",
+    "email": "farhana.akter@gmail.com",
+    "days_since_contact": 20,
+    "status": "Overdue",
+    "tags": ["Neighbor", "Family friend"],
+    "bio": "Grew up in the same neighborhood. Our families are very close.",
+    "goal": 15,
+    "next_due_date": "2025-07-19"
+  },
+  {
+    "id": 5,
+    "name": "Siam Chowdhury",
+    "picture": "https://i.ibb.co.com/rKRTGZsC/janko-ferlic-G-jo31-ESu-RE-unsplash.jpg",
+    "email": "siam.chowdhury@gmail.com",
+    "days_since_contact": 11,
+    "status": "Almost due",
+    "tags": ["Startup", "Business"],
+    "bio": "Met at a startup event. We often discuss business ideas and side projects.",
+    "goal": 14,
+    "next_due_date": "2025-07-21"
+  },
+  {
+    "id": 6,
+    "name": "Mim Sultana",
+    "picture": "https://i.ibb.co.com/99Z22VTb/stefan-stefancik-QXev-Dflbl8-A-unsplash.jpg",
+    "email": "mim.sultana@gmail.com",
+    "days_since_contact": 3,
+    "status": "On-track",
+    "tags": ["Online friend", "Design"],
+    "bio": "Connected through a UI/UX design community. We share feedback on design work.",
+    "goal": 7,
+    "next_due_date": "2025-07-23"
+  },
+  {
+    "id": 7,
+    "name": "Rakib Ahmed",
+    "picture": "https://i.ibb.co.com/ymTYrwKw/mitchell-luo-ymo-y-C-N-2o-unsplash.jpg",
+    "email": "rakib.ahmed@gmail.com",
+    "days_since_contact": 16,
+    "status": "Overdue",
+    "tags": ["Football", "Childhood"],
+    "bio": "Childhood friend. We used to play football every evening in the local মাঠ.",
+    "goal": 14,
+    "next_due_date": "2025-07-17"
+  },
+  {
+    "id": 8,
+    "name": "Sadia Karim",
+    "picture": "https://i.ibb.co.com/d0WhnMsq/raamin-ka-u-R51-HXLO7-G0-unsplash.jpg",
+    "email": "sadia.karim@gmail.com",
+    "days_since_contact": 8,
+    "status": "On-track",
+    "tags": ["University", "Group project"],
+    "bio": "Worked together on multiple university group projects. Very organized and supportive.",
+    "goal": 10,
+    "next_due_date": "2025-07-24"
+  }
+]
