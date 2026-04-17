@@ -1,21 +1,60 @@
 import { AiOutlineHome } from 'react-icons/ai';
 import { ImStatsDots } from 'react-icons/im';
 import { IoTimeOutline } from 'react-icons/io5';
-import { MdOutlineBarChart } from 'react-icons/md';
 import { NavLink } from 'react-router';
 
 const Navbar = () => {
   return (
-    <nav className='bg-base-100 shadow-sm '>
-      <div className="navbar container  mx-auto">
+    <nav className='bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50'>
+      <div className="navbar container mx-auto px-4">
         <div className="navbar-start">
-          <a className="text-2xl  md:text-3xl  lg:text-4xl  font-bold ">Keen<span className='text-green-700 text-2xl  md:text-3xl  lg:text-4xl '>Keeper</span></a>
+          <a className="text-2xl md:text-3xl font-bold text-gray-900">
+            Keen<span style={{color: '#244D3F'}}>Keeper</span>
+          </a>
         </div>
-        
-        <div className="navbar-end gap-3">
-          <NavLink to="/" className= {({isActive})=> `btn  text-[14px] md:text-[16px] lg:text-[18px] ${isActive ? 'bg-green-800 text-white' : 'btn-soft btn-success'} `}><AiOutlineHome /> Home</NavLink>
-          <NavLink to="/timeline" className={({isActive})=> `btn  text-[14px] md:text-[16px] lg:text-[18px] ${isActive ? 'bg-green-800 text-white' : 'btn-soft btn-success'} `}><IoTimeOutline /> Timeline</NavLink>
-          <NavLink to="/states" className={({isActive})=> `btn  text-[14px] md:text-[16px] lg:text-[18px] ${isActive ? 'bg-green-800 text-white' : 'btn-soft btn-success'} `}><ImStatsDots /> Stats</NavLink>
+
+        <div className="navbar-end gap-2">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                isActive
+                  ? 'text-white shadow-sm'
+                  : 'text-gray-600 hover:bg-green-50 hover:text-green-800'
+              }`
+            }
+            style={({ isActive }) => isActive ? { backgroundColor: '#244D3F' } : {}}
+          >
+            <AiOutlineHome size={16} /> Home
+          </NavLink>
+
+          <NavLink
+            to="/timeline"
+            className={({ isActive }) =>
+              `flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                isActive
+                  ? 'text-white shadow-sm'
+                  : 'text-gray-600 hover:bg-green-50 hover:text-green-800'
+              }`
+            }
+            style={({ isActive }) => isActive ? { backgroundColor: '#244D3F' } : {}}
+          >
+            <IoTimeOutline size={16} /> Timeline
+          </NavLink>
+
+          <NavLink
+            to="/states"
+            className={({ isActive }) =>
+              `flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                isActive
+                  ? 'text-white shadow-sm'
+                  : 'text-gray-600 hover:bg-green-50 hover:text-green-800'
+              }`
+            }
+            style={({ isActive }) => isActive ? { backgroundColor: '#244D3F' } : {}}
+          >
+            <ImStatsDots size={14} /> Stats
+          </NavLink>
         </div>
       </div>
     </nav>

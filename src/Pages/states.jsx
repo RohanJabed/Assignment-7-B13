@@ -3,12 +3,11 @@ import { PieChart, Pie, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import { FriendTimeLineContext } from '../Context/FriendTimeLineContext';
 
 const States = () => {
+    const { timeline } = useContext(FriendTimeLineContext);
 
-     const {timeline, } = useContext(FriendTimeLineContext);
-
-     const callCount = timeline.filter(item => item.type === 'call').length;
-     const textCount = timeline.filter(item => item.type === 'text').length;
-     const videoCount = timeline.filter(item => item.type === 'video').length;
+    const callCount = timeline.filter(item => item.type === 'call').length;
+    const textCount = timeline.filter(item => item.type === 'text').length;
+    const videoCount = timeline.filter(item => item.type === 'video').length;
 
     const data = [
         { name: 'Call', value: callCount, fill: '#034426' },
@@ -17,24 +16,29 @@ const States = () => {
     ];
 
     return (
-        <div className='container mx-auto'>
-            <h2 className='font-bold text-5xl p-6 my-6'>Friendship Analytics</h2>
+        <div className='container mx-auto px-4 py-10'>
 
-            <div className='p-12 my-5 shadow-2xl bg-gray-100' style={{ width: '100%', height: 400 }}>
-                <p className='font-semibold text-2xl text-black'>By Interaction Type</p>
-                <ResponsiveContainer>
+            <div className='mb-8'>
+                <h2 className='font-bold text-4xl text-gray-900'>Friendship Analytics</h2>
+                <div className='h-1 w-16 rounded-full mt-2' style={{backgroundColor: '#244D3F'}}></div>
+                <p className='text-gray-500 mt-2 text-sm'>A visual breakdown of how you stay connected.</p>
+            </div>
+
+            <div className='bg-white border border-gray-100 rounded-2xl shadow-sm p-8' style={{ width: '100%', height: 420 }}>
+                <p className='font-semibold text-lg text-black mb-4'>By Interaction Type</p>
+                <ResponsiveContainer width="100%" height="90%">
                     <PieChart>
                         <Pie
                             data={data}
-                            innerRadius="80%"
-                            outerRadius="100%"
+                            innerRadius="70%"
+                            outerRadius="90%"
                             cornerRadius={10}
                             paddingAngle={5}
                             dataKey="value"
                             isAnimationActive={true}
                         />
-                        <Legend></Legend>
-                        <Tooltip></Tooltip>
+                        <Legend />
+                        <Tooltip />
                     </PieChart>
                 </ResponsiveContainer>
             </div>

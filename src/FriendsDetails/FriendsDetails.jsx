@@ -1,41 +1,30 @@
-import React, { useContext, useState } from 'react';
-import { Link, useParams } from 'react-router';
+import React, { useContext } from 'react';
+import { useParams } from 'react-router';
 import UseFriend from '../Hooks/UseFriend';
-import { Bell, Archive, Trash2, Phone, MessageSquare, Video } from "lucide-react";
-import { Star } from "lucide-react";
-import { Heart } from "lucide-react";
 import { HashLoader } from 'react-spinners';
 import { FriendTimeLineContext } from '../Context/FriendTimeLineContext';
 import { toast } from 'react-toastify';
 
-
 const FriendsDetails = () => {
     const { id } = useParams();
     const { friends, loading } = UseFriend();
-
     const expectedFriend = friends.find(friend => String(friend.id) === id);
-
-    // const [timeline, setTimeline] = useState([]);
-     const {timeline, setTimeline} = useContext(FriendTimeLineContext);
+    const { timeline, setTimeline } = useContext(FriendTimeLineContext);
 
     const handleTimeline = (type) => {
         const newAction = {
-            type: type,
+            type,
             friend: expectedFriend.name,
             time: new Date().toLocaleString()
         };
-
-        toast.success(`${type} with ${expectedFriend.name} added to timeline`)
-
+        toast.success(`${type} with ${expectedFriend.name} added to timeline`);
         setTimeline(prev => [...prev, newAction]);
     };
 
-
-    console.log(timeline);
     if (loading) {
         return (
             <div className="min-h-screen flex justify-center items-center">
-                <HashLoader color='green'></HashLoader>
+                <HashLoader color='#244D3F' />
             </div>
         );
     }
@@ -43,159 +32,129 @@ const FriendsDetails = () => {
     if (!expectedFriend) {
         return (
             <div className="min-h-screen flex justify-center items-center">
-                <h2>Friend not found</h2>
+                <h2 className="text-xl text-gray-500">Friend not found</h2>
             </div>
         );
     }
 
     return (
-        <div className="bg-gray-100 p-6 flex justify-center">
-
+        <div className="min-h-screen py-10 px-4 flex justify-center">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl w-full">
 
-
-                <div className="bg-white rounded-2xl shadow p-6 text-center">
-
+                {/* LEFT CARD */}
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center h-fit">
                     <img
                         src={expectedFriend.picture}
                         alt={expectedFriend.name}
-                        className="w-20 h-20 rounded-full mx-auto"
+                        className="w-28 h-28 rounded-full mx-auto object-cover ring-4 ring-green-100"
                     />
 
-                    <h2 className="text-lg font-semibold mt-3 text-black">
+                    <h2 className="text-xl font-bold mt-4 text-black">
                         {expectedFriend.name}
                     </h2>
 
-                    <div className="flex justify-center gap-2 mt-2">
-
-                        <span className={`text-xs px-3 py-1 rounded-full ${expectedFriend.status === "Overdue"
-                            ? "bg-red-500 text-white"
-                            : expectedFriend.status === "Almost due"
-                                ? "bg-yellow-100 text-yellow-600"
-                                : "bg-green-500 text-white"
-                            }`}>
+                    <div className="flex justify-center mt-2">
+                        <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
+                            expectedFriend.status === "Overdue"
+                                ? "bg-red-500 text-white"
+                                : expectedFriend.status === "Almost due"
+                                    ? "bg-yellow-100 text-yellow-700"
+                                    : "bg-green-500 text-white"
+                        }`}>
                             {expectedFriend.status}
                         </span>
-
-
-
                     </div>
-                    <div className="flex  justify-center items-center mt-3 gap-2 font-bold">
+
+                    <div className="flex flex-wrap justify-center gap-2 mt-3">
                         {expectedFriend.tags.map((tag, index) => (
-                            <span key={index} className="badge badge-accent">
+                            <span key={index} className="text-xs px-2 py-1 rounded-full bg-green-50 text-green-700 font-medium">
                                 {tag}
                             </span>
                         ))}
                     </div>
 
-                    <p className="text-sm text-gray-500 mt-3 italic">
+                    <p className="text-sm text-gray-500 mt-4 italic leading-relaxed">
                         "{expectedFriend.bio}"
                     </p>
 
                     <p className="text-xs text-gray-400 mt-2">
-                        Preferred: {expectedFriend.email}
+                        📧 {expectedFriend.email}
                     </p>
 
                     <div className="mt-6 space-y-2">
-
-                        <button className="w-full border rounded-lg py-2 hover:bg-gray-100 text-black">
-                            Snooze 2 Weeks
+                        <button className="w-full border border-gray-200 rounded-xl py-2.5 text-sm font-medium text-black hover:bg-gray-50 transition-colors">
+                            🔔 Snooze 2 Weeks
                         </button>
-
-                        <button className="w-full border rounded-lg py-2 hover:bg-gray-100 text-black">
-                            Archive
+                        <button className="w-full border border-gray-200 rounded-xl py-2.5 text-sm font-medium text-black hover:bg-gray-50 transition-colors">
+                            📁 Archive
                         </button>
-
-                        <button className="w-full border rounded-lg py-2 text-red-500 hover:bg-red-50">
-                            Delete
+                        <button className="w-full border border-red-100 rounded-xl py-2.5 text-sm font-medium text-red-500 hover:bg-red-50 transition-colors">
+                            🗑 Delete
                         </button>
-
                     </div>
                 </div>
 
                 {/* RIGHT SIDE */}
                 <div className="lg:col-span-2 space-y-6">
 
-                    {/* TOP CARDS */}
+                    {/* STAT CARDS */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-                        <div className="bg-white rounded-xl shadow p-5 text-center">
-                            <h2 className="text-2xl font-bold" style={{color: '#244D3F'}}>
-                                {expectedFriend.days_since_contact}
-                            </h2>
-                            <p className="text-sm text-gray-500">
-                                Days Since Contact
-                            </p>
-                        </div>
-
-                        <div className="bg-white rounded-xl shadow p-5 text-center">
-                            <h2 className="text-2xl font-bold" style={{color: '#244D3F'}}>
-                                {expectedFriend.goal}
-                            </h2>
-                            <p className="text-sm text-gray-500">
-                                Goal (Days)
-                            </p>
-                        </div>
-
-                        <div className="bg-white rounded-xl shadow p-5 text-center">
-                            <h2 className="text-xl font-bold" style={{color: '#244D3F'}}>
-                                {expectedFriend.next_due_date}
-                            </h2>
-                            <p className="text-sm text-gray-500">
-                                Next Due
-                            </p>
-                        </div>
-
+                        {[
+                            { value: expectedFriend.days_since_contact, label: 'Days Since Contact' },
+                            { value: expectedFriend.goal, label: 'Goal (Days)' },
+                            { value: expectedFriend.next_due_date, label: 'Next Due' },
+                        ].map((stat, i) => (
+                            <div key={i} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 text-center">
+                                <h2 className="text-2xl font-bold" style={{color: '#244D3F'}}>
+                                    {stat.value}
+                                </h2>
+                                <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+                            </div>
+                        ))}
                     </div>
 
                     {/* RELATIONSHIP GOAL */}
-                    <div className="bg-white rounded-xl shadow p-6">
-
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                         <div className="flex justify-between items-center">
-                            <h2 className="font-semibold" style={{color: '#244D3F'}}>
+                            <h2 className="font-semibold text-lg" style={{color: '#244D3F'}}>
                                 Relationship Goal
                             </h2>
-                            <button className="border px-3 py-1 rounded-md text-sm">
+                            <button className="border border-gray-200 px-4 py-1.5 rounded-xl text-sm text-gray-600 hover:bg-gray-50 transition-colors">
                                 Edit
                             </button>
                         </div>
-
-                        <p className="text-gray-600 mt-2">
+                        <p className="text-gray-600 mt-2 text-sm">
                             Connect every{" "}
-                            <span className="font-semibold">
+                            <span className="font-semibold" style={{color: '#244D3F'}}>
                                 {expectedFriend.goal} days
                             </span>
                         </p>
-
                     </div>
 
                     {/* QUICK CHECK-IN */}
-                    <div className="bg-white rounded-xl shadow p-6">
-
-                        <h2 className="font-semibold mb-4" style={{color: '#244D3F'}}>
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                        <h2 className="font-semibold text-lg mb-4" style={{color: '#244D3F'}}>
                             Quick Check-In
                         </h2>
-
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-                            <button  onClick={() => handleTimeline("call")} className="border rounded-xl py-6 hover:bg-gray-100 text-black">
-                                📞 <br /> Call
-                            </button>
-
-                            <button  onClick={() => handleTimeline("text")} className="border rounded-xl py-6 hover:bg-gray-100 text-black">
-                                💬 <br /> Text
-                            </button>
-
-                            <button  onClick={() => handleTimeline("video")} className="border rounded-xl py-6 hover:bg-gray-100 text-black">
-                                🎥 <br /> Video
-                            </button>
-
+                            {[
+                                { type: 'call', emoji: '📞', label: 'Call' },
+                                { type: 'text', emoji: '💬', label: 'Text' },
+                                { type: 'video', emoji: '🎥', label: 'Video' },
+                            ].map(({ type, emoji, label }) => (
+                                <button
+                                    key={type}
+                                    onClick={() => handleTimeline(type)}
+                                    className="border border-gray-200 rounded-2xl py-6 text-black font-medium hover:bg-green-50 hover:border-green-200 transition-all"
+                                >
+                                    <span className="text-2xl block mb-1">{emoji}</span>
+                                    {label}
+                                </button>
+                            ))}
                         </div>
-
                     </div>
 
                 </div>
-
             </div>
         </div>
     );
