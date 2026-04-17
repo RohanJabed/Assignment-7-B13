@@ -152,7 +152,7 @@ const FriendsDetails = () => {
                     <div className="bg-white rounded-xl shadow p-6">
 
                         <div className="flex justify-between items-center">
-                            <h2 className="font-semibold">
+                            <h2 className="font-semibold" style={{color: '#244D3F'}}>
                                 Relationship Goal
                             </h2>
                             <button className="border px-3 py-1 rounded-md text-sm">
@@ -178,15 +178,15 @@ const FriendsDetails = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-                            <button  onClick={() => handleTimeline("call")} className="border rounded-xl py-6 hover:bg-gray-100">
+                            <button  onClick={() => handleTimeline("call")} className="border rounded-xl py-6 hover:bg-gray-100 text-black">
                                 📞 <br /> Call
                             </button>
 
-                            <button  onClick={() => handleTimeline("text")} className="border rounded-xl py-6 hover:bg-gray-100">
+                            <button  onClick={() => handleTimeline("text")} className="border rounded-xl py-6 hover:bg-gray-100 text-black">
                                 💬 <br /> Text
                             </button>
 
-                            <button  onClick={() => handleTimeline("video")} className="border rounded-xl py-6 hover:bg-gray-100">
+                            <button  onClick={() => handleTimeline("video")} className="border rounded-xl py-6 hover:bg-gray-100 text-black">
                                 🎥 <br /> Video
                             </button>
 
