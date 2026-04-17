@@ -172,7 +172,7 @@ const FriendsDetails = () => {
                     {/* QUICK CHECK-IN */}
                     <div className="bg-white rounded-xl shadow p-6">
 
-                        <h2 className="font-semibold mb-4">
+                        <h2 className="font-semibold mb-4" style={{color: '#244D3F'}}>
                             Quick Check-In
                         </h2>
 
