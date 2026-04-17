@@ -30,4 +30,4 @@ Add filter system for timeline
 Save data using localStorage or database
 Add edit/delete features for timeline
 👨‍💻 Author
-Mahabub Islam
+Md.Rohan Jabed
